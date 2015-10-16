@@ -25,6 +25,9 @@ class TypeOwnDishesViewController: UIViewController, UIScrollViewDelegate, UITex
     @IBAction func nextPressed(sender: UIBarButtonItem) {
         // extend currMeal.soloDishes by dishArr
         currMeal!.soloDishes.appendContentsOf(dishArr)
+        if currUser.isHost {
+            self.performSegueWithIdentifier("typeOwnDishesToServerTypeShareDishes", sender: self)
+        }
     }
     
     @IBAction func addPressed(sender: UIButton) {

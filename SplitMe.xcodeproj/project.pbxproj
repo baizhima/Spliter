@@ -16,6 +16,9 @@
 		EC62E90B1BD077B1003718C2 /* ClientJoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC62E90A1BD077B1003718C2 /* ClientJoinViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		EC62E90D1BD08CB0003718C2 /* TypeOwnDishesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC62E90C1BD08CB0003718C2 /* TypeOwnDishesViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		EC62E90F1BD095F3003718C2 /* ServerTypeShareDishesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC62E90E1BD095F3003718C2 /* ServerTypeShareDishesViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		EC62E9111BD184F4003718C2 /* ClientWatchAllDishesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC62E9101BD184F4003718C2 /* ClientWatchAllDishesViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		EC62E9131BD186A7003718C2 /* ServerCheckSubtotalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC62E9121BD186A7003718C2 /* ServerCheckSubtotalViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		EC62E9151BD187D9003718C2 /* RemoveDishesDidNotEatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC62E9141BD187D9003718C2 /* RemoveDishesDidNotEatViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		EC62E90A1BD077B1003718C2 /* ClientJoinViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientJoinViewController.swift; sourceTree = "<group>"; };
 		EC62E90C1BD08CB0003718C2 /* TypeOwnDishesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeOwnDishesViewController.swift; sourceTree = "<group>"; };
 		EC62E90E1BD095F3003718C2 /* ServerTypeShareDishesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerTypeShareDishesViewController.swift; sourceTree = "<group>"; };
+		EC62E9101BD184F4003718C2 /* ClientWatchAllDishesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientWatchAllDishesViewController.swift; sourceTree = "<group>"; };
+		EC62E9121BD186A7003718C2 /* ServerCheckSubtotalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerCheckSubtotalViewController.swift; sourceTree = "<group>"; };
+		EC62E9141BD187D9003718C2 /* RemoveDishesDidNotEatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoveDishesDidNotEatViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +70,9 @@
 			children = (
 				EC62E8F41BD0758E003718C2 /* AppDelegate.swift */,
 				EC62E8F81BD0758E003718C2 /* Main.storyboard */,
+				EC62E9141BD187D9003718C2 /* RemoveDishesDidNotEatViewController.swift */,
+				EC62E9121BD186A7003718C2 /* ServerCheckSubtotalViewController.swift */,
+				EC62E9101BD184F4003718C2 /* ClientWatchAllDishesViewController.swift */,
 				EC62E90E1BD095F3003718C2 /* ServerTypeShareDishesViewController.swift */,
 				EC62E90C1BD08CB0003718C2 /* TypeOwnDishesViewController.swift */,
 				EC62E9081BD0779A003718C2 /* ServerWaitViewController.swift */,
@@ -148,8 +157,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC62E90D1BD08CB0003718C2 /* TypeOwnDishesViewController.swift in Sources */,
+				EC62E9111BD184F4003718C2 /* ClientWatchAllDishesViewController.swift in Sources */,
 				EC62E9091BD0779A003718C2 /* ServerWaitViewController.swift in Sources */,
+				EC62E9151BD187D9003718C2 /* RemoveDishesDidNotEatViewController.swift in Sources */,
 				EC62E8F51BD0758E003718C2 /* AppDelegate.swift in Sources */,
+				EC62E9131BD186A7003718C2 /* ServerCheckSubtotalViewController.swift in Sources */,
 				EC62E9071BD075BD003718C2 /* HomeViewController.swift in Sources */,
 				EC62E90B1BD077B1003718C2 /* ClientJoinViewController.swift in Sources */,
 				EC62E90F1BD095F3003718C2 /* ServerTypeShareDishesViewController.swift in Sources */,
@@ -302,6 +314,7 @@
 				EC62E9051BD0758E003718C2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
