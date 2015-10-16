@@ -437,6 +437,8 @@
                         <outlet property="scrollView" destination="MIM-tx-g3s" id="u5w-aI-Lxm"/>
                         <segue destination="8fj-I8-EmW" kind="show" identifier="typeOwnDishesToServerTypeShareDishes" id="7dO-xX-yeP"/>
                         <segue destination="tXM-hD-fRu" kind="show" identifier="typeOwnDishesToClientWatchAllDishes" id="KKg-IW-lmu"/>
+                        <segue destination="Dji-Nd-e40" kind="show" identifier="typeOwnDishesToServerWait" id="vOd-pg-Kca"/>
+                        <segue destination="zMg-sx-EcO" kind="show" identifier="typeOwnDishesToClientJoin" id="dGz-N1-fph"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Nc-UX-lmd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -490,7 +492,7 @@
                                     <constraint firstAttribute="height" constant="172" id="Lg4-JL-y8K"/>
                                 </constraints>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please wait split host to check" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oz4-f4-dfS">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="More shared dishes coming..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oz4-f4-dfS">
                                 <rect key="frame" x="22" y="579" width="331" height="40"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -521,45 +523,14 @@
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <segue destination="a63-N9-D1F" kind="show" identifier="clientWatchAllDishesToTypeOwnDishes" id="4KL-G5-uf4"/>
+                        <segue destination="noI-Ie-780" kind="show" identifier="clientWatchAllDishesToRemoveDishesDidNotEat" id="S8D-pB-Lra"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Jx-Yu-zrM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1324.5" y="825.5"/>
-        </scene>
-        <!--Server Check Subtotal View Controller-->
-        <scene sceneID="AGg-gC-gd2">
-            <objects>
-                <viewController id="nlK-TI-XsT" customClass="ServerCheckSubtotalViewController" customModule="SplitMe" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="BH5-oJ-EWT"/>
-                        <viewControllerLayoutGuide type="bottom" id="TWM-f5-xTI"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="1fd-az-s0X">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NO1-M9-LOH">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <items>
-                                    <navigationItem id="wK4-uc-jHP">
-                                        <barButtonItem key="leftBarButtonItem" title="back" id="JqF-b4-TUa"/>
-                                        <barButtonItem key="rightBarButtonItem" title="next" id="hq2-te-VIr"/>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="NO1-M9-LOH" firstAttribute="leading" secondItem="1fd-az-s0X" secondAttribute="leading" id="47g-2l-V7x"/>
-                            <constraint firstItem="NO1-M9-LOH" firstAttribute="top" secondItem="BH5-oJ-EWT" secondAttribute="bottom" id="Omd-lT-vOu"/>
-                            <constraint firstAttribute="trailing" secondItem="NO1-M9-LOH" secondAttribute="trailing" id="Qpv-Dc-qRz"/>
-                        </constraints>
-                    </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dih-hm-fRm" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1768.5" y="66.5"/>
         </scene>
         <!--Remove Dishes Did Not Eat View Controller-->
         <scene sceneID="T2I-3p-MwP">
@@ -572,13 +543,38 @@
                     <view key="view" contentMode="scaleToFill" id="pKf-uD-Wvb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Shared Food" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e15-UD-qPW">
+                                <rect key="frame" x="26" y="94" width="153" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U3r-VO-RoT">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem id="muF-6j-KgI">
+                                        <barButtonItem key="leftBarButtonItem" title="back" id="ODI-s6-MXu"/>
+                                        <barButtonItem key="rightBarButtonItem" title="next" id="UcV-Hu-KDR"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Z8X-N9-r6A">
+                                <rect key="frame" x="0.0" y="135" width="375" height="307"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <segue destination="8fj-I8-EmW" kind="show" identifier="removeDishesDidNotEatToServerTypeShareDishes" id="qUL-tE-KXI"/>
+                        <segue destination="tXM-hD-fRu" kind="show" identifier="removeDishesDidNotEatToClientWatchAllDishes" id="Dn7-Wl-YMU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uiy-n9-RrW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2229.5" y="490.5"/>
+            <point key="canvasLocation" x="1779.5" y="490.5"/>
         </scene>
         <!--Server Type Share Dishes View Controller-->
         <scene sceneID="Mc9-ib-ZjH">
@@ -699,6 +695,10 @@
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <segue destination="a63-N9-D1F" kind="show" identifier="ServerTypeShareDishesToTypeOwnDishes" id="p4C-2T-D0T"/>
+                        <segue destination="noI-Ie-780" kind="show" identifier="serverTypeSharedDishesToRemoveDishesDidNotEat" id="52M-oE-eQu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dhr-eF-EHH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -707,6 +707,11 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="Xbw-4H-gG2"/>
-        <segue reference="GNX-lR-uzL"/>
+        <segue reference="dGz-N1-fph"/>
+        <segue reference="p4C-2T-D0T"/>
+        <segue reference="qUL-tE-KXI"/>
+        <segue reference="52M-oE-eQu"/>
+        <segue reference="Dn7-Wl-YMU"/>
+        <segue reference="vOd-pg-Kca"/>
     </inferredMetricsTieBreakers>
 </document>
