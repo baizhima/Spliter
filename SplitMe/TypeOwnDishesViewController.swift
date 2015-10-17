@@ -9,7 +9,7 @@
 import UIKit
 
 
-var dishArr = [Dish]()
+var soloDishArr = [Dish]()
 
 class TypeOwnDishesViewController: UIViewController, UIScrollViewDelegate, UITextFieldDelegate, UITableViewDelegate {
 
@@ -24,16 +24,18 @@ class TypeOwnDishesViewController: UIViewController, UIScrollViewDelegate, UITex
     
     @IBAction func nextPressed(sender: UIBarButtonItem) {
         // extend currMeal.soloDishes by dishArr
-        currMeal!.soloDishes.appendContentsOf(dishArr)
+        currMeal!.soloDishes.appendContentsOf(soloDishArr)
         if currUser.isHost {
             self.performSegueWithIdentifier("typeOwnDishesToServerTypeShareDishes", sender: self)
+        } else {
+            self.performSegueWithIdentifier("typeOwnDishesToClientWatchAllDishes", sender: self)
         }
     }
     
     @IBAction func addPressed(sender: UIButton) {
         if dishField!.text != "" && priceField!.text != "" {
             let currDish = Dish(name: dishField.text!, price: Double(priceField.text!)!, user: currUser)
-            dishArr.append(currDish)
+            soloDishArr.append(currDish)
             dishField.text = ""
             priceField.text = ""
             dishTable.reloadData()
@@ -70,7 +72,7 @@ class TypeOwnDishesViewController: UIViewController, UIScrollViewDelegate, UITex
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dishArr.count
+        return soloDishArr.count
     }
     
     
@@ -78,9 +80,9 @@ class TypeOwnDishesViewController: UIViewController, UIScrollViewDelegate, UITex
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let newCell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: "Cell")
-        let idx = dishArr.count-1-indexPath.row
-        newCell.textLabel!.text = "\(dishArr[idx].name)"
-        newCell.detailTextLabel?.text = "$" + String(NSString(format:"%.2f", dishArr[idx].price))
+        let idx = soloDishArr.count-1-indexPath.row
+        newCell.textLabel!.text = "\(soloDishArr[idx].name)"
+        newCell.detailTextLabel?.text = "$" + String(NSString(format:"%.2f", soloDishArr[idx].price))
         return newCell
     }
 

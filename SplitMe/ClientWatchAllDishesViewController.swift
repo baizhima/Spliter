@@ -9,7 +9,15 @@
 import UIKit
 
 class ClientWatchAllDishesViewController: UIViewController {
+    
+    
+    @IBAction func backPressed(sender: UIBarButtonItem) {
+        self.performSegueWithIdentifier("clientWatchAllDishesToTypeOwnDishes", sender: self)
+    }
 
+    @IBAction func nextPressed(sender: UIBarButtonItem) {
+        self.performSegueWithIdentifier("clientWatchAllDishesToRemoveDishesDidNotEat", sender: self)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 

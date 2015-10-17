@@ -473,8 +473,16 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <items>
                                     <navigationItem id="rRc-zH-Ni2">
-                                        <barButtonItem key="leftBarButtonItem" title="back" id="QNi-2o-bUX"/>
-                                        <barButtonItem key="rightBarButtonItem" title="next" id="zIz-8r-BU5"/>
+                                        <barButtonItem key="leftBarButtonItem" title="back" id="QNi-2o-bUX">
+                                            <connections>
+                                                <action selector="backPressed:" destination="tXM-hD-fRu" id="BZx-8A-ed8"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="next" id="zIz-8r-BU5">
+                                            <connections>
+                                                <action selector="nextPressed:" destination="tXM-hD-fRu" id="mVu-2U-YLN"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -554,7 +562,11 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <items>
                                     <navigationItem id="muF-6j-KgI">
-                                        <barButtonItem key="leftBarButtonItem" title="back" id="ODI-s6-MXu"/>
+                                        <barButtonItem key="leftBarButtonItem" title="back" id="ODI-s6-MXu">
+                                            <connections>
+                                                <action selector="backPressed:" destination="noI-Ie-780" id="gha-Nx-KjC"/>
+                                            </connections>
+                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="next" id="UcV-Hu-KDR"/>
                                     </navigationItem>
                                 </items>
@@ -568,13 +580,12 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <segue destination="8fj-I8-EmW" kind="show" identifier="removeDishesDidNotEatToServerTypeShareDishes" id="qUL-tE-KXI"/>
                         <segue destination="tXM-hD-fRu" kind="show" identifier="removeDishesDidNotEatToClientWatchAllDishes" id="Dn7-Wl-YMU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uiy-n9-RrW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1779.5" y="490.5"/>
+            <point key="canvasLocation" x="2289.5" y="561.5"/>
         </scene>
         <!--Server Type Share Dishes View Controller-->
         <scene sceneID="Mc9-ib-ZjH">
@@ -590,12 +601,19 @@
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7bY-of-NGy">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="7NZ-F5-eyK"/>
+                                </constraints>
                                 <items>
                                     <navigationItem title="shared dishes" id="1Tg-8E-Zbm">
-                                        <barButtonItem key="leftBarButtonItem" title="back" id="QmD-HE-ZEu"/>
+                                        <barButtonItem key="leftBarButtonItem" title="back" id="QmD-HE-ZEu">
+                                            <connections>
+                                                <action selector="backPressed:" destination="8fj-I8-EmW" id="It0-w1-Ebx"/>
+                                            </connections>
+                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="next" id="lae-88-Yw1">
                                             <connections>
-                                                <action selector="nextPressed:" destination="a63-N9-D1F" id="Hq3-4j-VH5"/>
+                                                <action selector="nextPressed:" destination="8fj-I8-EmW" id="Bvp-Oo-Oyu"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -609,15 +627,15 @@
                                     </imageView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="Z8n-5y-ESc" firstAttribute="centerX" secondItem="l9i-GI-391" secondAttribute="centerX" id="EzY-IP-oig"/>
-                                    <constraint firstItem="Z8n-5y-ESc" firstAttribute="top" secondItem="l9i-GI-391" secondAttribute="top" id="K8j-0K-jZO"/>
-                                    <constraint firstItem="Z8n-5y-ESc" firstAttribute="centerY" secondItem="l9i-GI-391" secondAttribute="centerY" id="T6G-pt-gdX"/>
-                                    <constraint firstItem="Z8n-5y-ESc" firstAttribute="leading" secondItem="l9i-GI-391" secondAttribute="leading" id="cXj-CQ-dHB"/>
-                                    <constraint firstAttribute="trailing" secondItem="Z8n-5y-ESc" secondAttribute="trailing" id="wsu-m0-3sY"/>
-                                    <constraint firstAttribute="bottom" secondItem="Z8n-5y-ESc" secondAttribute="bottom" id="xvF-zy-E8M"/>
+                                    <constraint firstItem="Z8n-5y-ESc" firstAttribute="centerY" secondItem="l9i-GI-391" secondAttribute="centerY" id="CVc-Jm-NpR"/>
+                                    <constraint firstItem="Z8n-5y-ESc" firstAttribute="top" secondItem="l9i-GI-391" secondAttribute="top" id="CWM-3o-7wM"/>
+                                    <constraint firstItem="Z8n-5y-ESc" firstAttribute="leading" secondItem="l9i-GI-391" secondAttribute="leading" id="Lbj-hv-9kz"/>
+                                    <constraint firstItem="Z8n-5y-ESc" firstAttribute="centerX" secondItem="l9i-GI-391" secondAttribute="centerX" id="QNO-Rf-Nkf"/>
+                                    <constraint firstAttribute="trailing" secondItem="Z8n-5y-ESc" secondAttribute="trailing" id="Qxi-lo-D3S"/>
+                                    <constraint firstAttribute="bottom" secondItem="Z8n-5y-ESc" secondAttribute="bottom" id="Wwg-0c-GZ8"/>
                                 </constraints>
                                 <connections>
-                                    <outlet property="delegate" destination="a63-N9-D1F" id="ZEy-C0-kM8"/>
+                                    <outlet property="delegate" destination="8fj-I8-EmW" id="qGP-9q-4wL"/>
                                 </connections>
                             </scrollView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dish name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S7W-bn-TGe">
@@ -651,6 +669,7 @@
                                 <rect key="frame" x="336" y="330" width="30" height="30"/>
                                 <state key="normal" title="Add"/>
                                 <connections>
+                                    <action selector="addPressed:" destination="8fj-I8-EmW" eventType="touchUpInside" id="8fs-hD-78S"/>
                                     <action selector="addPressed:" destination="a63-N9-D1F" eventType="touchUpInside" id="WQK-7G-Xg6"/>
                                 </connections>
                             </button>
@@ -665,21 +684,26 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3XC-tr-Dh0">
                                 <rect key="frame" x="0.0" y="368" width="375" height="299"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="8fj-I8-EmW" id="DBx-rw-GbX"/>
+                                    <outlet property="delegate" destination="8fj-I8-EmW" id="RyP-Wg-GCA"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="l9i-GI-391" firstAttribute="leading" secondItem="7bY-of-NGy" secondAttribute="leading" id="7cq-MX-KWi"/>
                             <constraint firstItem="wU1-2O-bYc" firstAttribute="top" secondItem="O31-J8-GSf" secondAttribute="top" id="A7t-Vb-mPx"/>
+                            <constraint firstItem="l9i-GI-391" firstAttribute="trailing" secondItem="3XC-tr-Dh0" secondAttribute="trailing" id="AT7-V8-1pA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7bY-of-NGy" secondAttribute="trailing" constant="-20" id="BUA-Ah-oOl"/>
                             <constraint firstItem="Nq6-QG-QcG" firstAttribute="firstBaseline" secondItem="S7W-bn-TGe" secondAttribute="firstBaseline" id="Frf-MB-AyZ"/>
+                            <constraint firstItem="7bY-of-NGy" firstAttribute="leading" secondItem="sOJ-Ow-yxf" secondAttribute="leadingMargin" constant="-20" id="GK4-Lh-v7o"/>
                             <constraint firstItem="S7W-bn-TGe" firstAttribute="leading" secondItem="sOJ-Ow-yxf" secondAttribute="leadingMargin" constant="-5" id="HOl-Mk-N8I"/>
                             <constraint firstItem="Nq6-QG-QcG" firstAttribute="bottom" secondItem="O31-J8-GSf" secondAttribute="bottom" id="Jnc-fA-V1s"/>
+                            <constraint firstItem="l9i-GI-391" firstAttribute="leading" secondItem="7bY-of-NGy" secondAttribute="leading" id="Jqc-no-dzJ"/>
                             <constraint firstItem="eoL-J7-ykE" firstAttribute="leading" secondItem="sOJ-Ow-yxf" secondAttribute="leadingMargin" constant="73" id="Kku-Ca-yCA"/>
+                            <constraint firstAttribute="bottom" secondItem="l9i-GI-391" secondAttribute="bottom" constant="345" id="OPy-Wb-Qjy"/>
                             <constraint firstItem="7bY-of-NGy" firstAttribute="leading" secondItem="sOJ-Ow-yxf" secondAttribute="leading" id="OdJ-q3-AOg"/>
-                            <constraint firstItem="l9i-GI-391" firstAttribute="top" secondItem="7bY-of-NGy" secondAttribute="bottom" id="Poz-ay-o18"/>
                             <constraint firstItem="S7W-bn-TGe" firstAttribute="top" secondItem="O31-J8-GSf" secondAttribute="top" id="WXW-ot-PjX"/>
-                            <constraint firstItem="3XC-tr-Dh0" firstAttribute="trailing" secondItem="l9i-GI-391" secondAttribute="trailing" id="c7p-H6-UkS"/>
-                            <constraint firstItem="l9i-GI-391" firstAttribute="trailing" secondItem="7bY-of-NGy" secondAttribute="trailing" id="cmE-AQ-2tb"/>
                             <constraint firstItem="3XC-tr-Dh0" firstAttribute="top" secondItem="S7W-bn-TGe" secondAttribute="bottom" constant="8" symbolic="YES" id="cpE-va-wkC"/>
                             <constraint firstItem="Nq6-QG-QcG" firstAttribute="baseline" secondItem="S7W-bn-TGe" secondAttribute="baseline" id="cvv-dn-ilc"/>
                             <constraint firstAttribute="trailing" secondItem="7bY-of-NGy" secondAttribute="trailing" id="drI-m5-nXc"/>
@@ -687,31 +711,81 @@
                             <constraint firstItem="O31-J8-GSf" firstAttribute="leading" secondItem="Nq6-QG-QcG" secondAttribute="trailing" constant="1" id="f0o-cV-tbV"/>
                             <constraint firstItem="7bY-of-NGy" firstAttribute="top" secondItem="DWg-i4-344" secondAttribute="bottom" id="iDr-yq-rnw"/>
                             <constraint firstItem="wU1-2O-bYc" firstAttribute="leading" secondItem="O31-J8-GSf" secondAttribute="trailing" constant="7" id="ikM-qm-DGq"/>
+                            <constraint firstItem="S7W-bn-TGe" firstAttribute="top" secondItem="l9i-GI-391" secondAttribute="bottom" constant="8" symbolic="YES" id="jUu-Dw-4WF"/>
+                            <constraint firstItem="7bY-of-NGy" firstAttribute="top" secondItem="DWg-i4-344" secondAttribute="bottom" id="l0U-bk-9EP"/>
+                            <constraint firstItem="l9i-GI-391" firstAttribute="top" secondItem="7bY-of-NGy" secondAttribute="bottom" id="lgw-WM-J8Q"/>
                             <constraint firstItem="eoL-J7-ykE" firstAttribute="baseline" secondItem="O31-J8-GSf" secondAttribute="baseline" id="p8f-BE-ZmP"/>
                             <constraint firstItem="O31-J8-GSf" firstAttribute="leading" secondItem="eoL-J7-ykE" secondAttribute="trailing" constant="47" id="q6h-Vp-o3I"/>
-                            <constraint firstItem="3XC-tr-Dh0" firstAttribute="leading" secondItem="l9i-GI-391" secondAttribute="leading" id="txf-NA-Knd"/>
-                            <constraint firstItem="S7W-bn-TGe" firstAttribute="top" secondItem="l9i-GI-391" secondAttribute="bottom" constant="8" symbolic="YES" id="vBo-Dm-fOh"/>
-                            <constraint firstItem="jOX-U4-mcY" firstAttribute="top" secondItem="l9i-GI-391" secondAttribute="bottom" constant="345" id="vrp-GX-Mi0"/>
+                            <constraint firstItem="l9i-GI-391" firstAttribute="trailing" secondItem="7bY-of-NGy" secondAttribute="trailing" id="tUY-nI-JQP"/>
+                            <constraint firstItem="l9i-GI-391" firstAttribute="leading" secondItem="3XC-tr-Dh0" secondAttribute="leading" id="tbw-Q8-KPV"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <segue destination="a63-N9-D1F" kind="show" identifier="ServerTypeShareDishesToTypeOwnDishes" id="p4C-2T-D0T"/>
-                        <segue destination="noI-Ie-780" kind="show" identifier="serverTypeSharedDishesToRemoveDishesDidNotEat" id="52M-oE-eQu"/>
+                        <outlet property="dishField" destination="eoL-J7-ykE" id="F6T-xe-yHn"/>
+                        <outlet property="dishTable" destination="3XC-tr-Dh0" id="bys-1x-H1f"/>
+                        <outlet property="imageView" destination="Z8n-5y-ESc" id="FaF-3b-ZSk"/>
+                        <outlet property="priceField" destination="O31-J8-GSf" id="1dL-hi-aLI"/>
+                        <outlet property="scrollView" destination="l9i-GI-391" id="AvA-vj-F5x"/>
+                        <segue destination="a63-N9-D1F" kind="show" identifier="serverTypeShareDishesToTypeOwnDishes" id="p4C-2T-D0T"/>
+                        <segue destination="VlJ-1k-BW6" kind="show" identifier="serverTypeShareDishesToServerCheckSubtotal" id="pvz-V4-lo1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dhr-eF-EHH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1324.5" y="66.5"/>
         </scene>
+        <!--Server Check Subtotal View Controller-->
+        <scene sceneID="NgA-Zf-Eek">
+            <objects>
+                <viewController id="VlJ-1k-BW6" customClass="ServerCheckSubtotalViewController" customModule="SplitMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dLR-zL-Nw5"/>
+                        <viewControllerLayoutGuide type="bottom" id="2xt-bn-4fn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7D4-Cn-9X4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AJr-dr-IXY">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem id="Ebe-bW-kMI">
+                                        <barButtonItem key="leftBarButtonItem" title="back" id="UCL-I2-jvy">
+                                            <connections>
+                                                <action selector="backPressed:" destination="VlJ-1k-BW6" id="i8v-tP-MCK"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="next" id="nj8-Ec-7bd"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="AJr-dr-IXY" firstAttribute="top" secondItem="dLR-zL-Nw5" secondAttribute="bottom" id="HH4-Fs-gBn"/>
+                            <constraint firstAttribute="trailing" secondItem="AJr-dr-IXY" secondAttribute="trailing" id="SRo-ot-qa5"/>
+                            <constraint firstItem="AJr-dr-IXY" firstAttribute="leading" secondItem="7D4-Cn-9X4" secondAttribute="leading" id="e2u-re-aci"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <segue destination="8fj-I8-EmW" kind="show" identifier="serverCheckSubtotalToServerTypeShareDishes" id="ghu-bt-NMB"/>
+                        <segue destination="noI-Ie-780" kind="show" identifier="serverCheckSubtotalToRemoveDishesDidNotEat" id="96H-5m-BCx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qsu-gu-6B0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1787.5" y="66.5"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Xbw-4H-gG2"/>
-        <segue reference="dGz-N1-fph"/>
         <segue reference="p4C-2T-D0T"/>
-        <segue reference="qUL-tE-KXI"/>
-        <segue reference="52M-oE-eQu"/>
+        <segue reference="ghu-bt-NMB"/>
+        <segue reference="96H-5m-BCx"/>
         <segue reference="Dn7-Wl-YMU"/>
         <segue reference="vOd-pg-Kca"/>
+        <segue reference="dGz-N1-fph"/>
+        <segue reference="bwC-y0-ghp"/>
     </inferredMetricsTieBreakers>
 </document>

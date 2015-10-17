@@ -10,6 +10,9 @@ import UIKit
 
 class RemoveDishesDidNotEatViewController: UIViewController {
 
+    @IBAction func backPressed(sender: UIBarButtonItem) {
+        self.performSegueWithIdentifier("serverCheckSubtotalToRemoveDishesDidNotEat", sender: self)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 

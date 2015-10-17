@@ -9,6 +9,12 @@
 import UIKit
 
 class ServerCheckSubtotalViewController: UIViewController {
+    
+    
+    @IBAction func backPressed(sender: UIBarButtonItem) {
+        self.performSegueWithIdentifier("serverCheckSubtotalToServerTypeShareDishes", sender: self)
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
