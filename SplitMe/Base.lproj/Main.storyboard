@@ -571,7 +571,11 @@
                                                 <action selector="backPressed:" destination="noI-Ie-780" id="gha-Nx-KjC"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="next" id="UcV-Hu-KDR"/>
+                                        <barButtonItem key="rightBarButtonItem" title="next" id="UcV-Hu-KDR">
+                                            <connections>
+                                                <action selector="nextPressed:" destination="noI-Ie-780" id="oOr-tG-pNY"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -585,11 +589,103 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <segue destination="tXM-hD-fRu" kind="show" identifier="removeDishesDidNotEatToClientWatchAllDishes" id="Dn7-Wl-YMU"/>
+                        <segue destination="aXh-VE-ViT" kind="show" identifier="removeDishesDidNotEatToServerConfirmTotal" id="rKd-pn-Yaq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uiy-n9-RrW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2289.5" y="561.5"/>
+        </scene>
+        <!--Server Confirm Total View Controller-->
+        <scene sceneID="xna-Ym-pRd">
+            <objects>
+                <viewController id="aXh-VE-ViT" customClass="ServerConfirmTotalViewController" customModule="SplitMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xKH-q1-rbc"/>
+                        <viewControllerLayoutGuide type="bottom" id="fAz-nX-oDS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0w0-sf-VtQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aic-gC-EZ6">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem id="ewM-Gx-viX">
+                                        <barButtonItem key="leftBarButtonItem" title="back" id="vT1-Ch-rW0"/>
+                                        <barButtonItem key="rightBarButtonItem" title="next" id="rUp-Wb-WeZ"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Subtotal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZGK-aC-J0p">
+                                <rect key="frame" x="48" y="110" width="121" height="56"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tax" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qBl-V8-KSH">
+                                <rect key="frame" x="48" y="238" width="121" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9I3-Yy-ZU5">
+                                <rect key="frame" x="189" y="243" width="104" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tips" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y3t-85-weU">
+                                <rect key="frame" x="48" y="315" width="121" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bwD-PA-dgw">
+                                <rect key="frame" x="52" y="429" width="83" height="38"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FPu-xm-hme">
+                                <rect key="frame" x="313" y="325" width="23" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V3g-ff-yow">
+                                <rect key="frame" x="186" y="412" width="99" height="72"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="biE-U8-JHB">
+                                <rect key="frame" x="218" y="109" width="67" height="56"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h9d-S0-F5F">
+                                <rect key="frame" x="177" y="304" width="114" height="64"/>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="aic-gC-EZ6" firstAttribute="leading" secondItem="0w0-sf-VtQ" secondAttribute="leading" id="1EM-xU-anA"/>
+                            <constraint firstAttribute="trailing" secondItem="aic-gC-EZ6" secondAttribute="trailing" id="Gll-mq-RTS"/>
+                            <constraint firstItem="aic-gC-EZ6" firstAttribute="top" secondItem="xKH-q1-rbc" secondAttribute="bottom" id="mFg-df-6Bg"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="pickerVIew" destination="h9d-S0-F5F" id="WaZ-Ww-ILc"/>
+                        <outlet property="subtotalField" destination="biE-U8-JHB" id="UP8-Ti-988"/>
+                        <outlet property="taxField" destination="9I3-Yy-ZU5" id="eyk-bc-kSo"/>
+                        <outlet property="totalField" destination="V3g-ff-yow" id="Tc1-hr-VBC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="45Q-0m-N2d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2756.5" y="561.5"/>
         </scene>
         <!--Server Type Share Dishes View Controller-->
         <scene sceneID="Mc9-ib-ZjH">
@@ -816,12 +912,12 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="4KL-G5-uf4"/>
-        <segue reference="KKg-IW-lmu"/>
-        <segue reference="S8D-pB-Lra"/>
-        <segue reference="vOd-pg-Kca"/>
-        <segue reference="dGz-N1-fph"/>
-        <segue reference="7dO-xX-yeP"/>
         <segue reference="bwC-y0-ghp"/>
+        <segue reference="vOd-pg-Kca"/>
+        <segue reference="p4C-2T-D0T"/>
+        <segue reference="ghu-bt-NMB"/>
+        <segue reference="96H-5m-BCx"/>
+        <segue reference="Dn7-Wl-YMU"/>
+        <segue reference="dGz-N1-fph"/>
     </inferredMetricsTieBreakers>
 </document>

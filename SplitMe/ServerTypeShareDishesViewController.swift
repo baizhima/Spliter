@@ -29,6 +29,7 @@ class ServerTypeShareDishesViewController: UIViewController, UIScrollViewDelegat
     }
     
     @IBAction func nextPressed(sender: UIBarButtonItem) {
+        currMeal?.shareDishes.appendContentsOf(sharedDishArr)
         self.performSegueWithIdentifier("serverTypeShareDishesToServerCheckSubtotal", sender: self)
         
     }

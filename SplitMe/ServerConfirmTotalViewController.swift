@@ -9,10 +9,34 @@
 import UIKit
 
 class ServerConfirmTotalViewController: UIViewController {
-
+    
+    var subtotal = 0.0
+    var tax = 0.0
+    var tipsPct: Int?
+    var tips = 0.0
+    
+    
+    @IBOutlet weak var subtotalField: UILabel!
+    
+    @IBOutlet weak var taxField: UITextField!
+    
+    
+    @IBOutlet weak var pickerVIew: UIPickerView!
+    
+    @IBOutlet weak var totalField: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        for dish in currMeal!.shareDishes {
+            subtotal += dish.price
+        }
+        for dish in currMeal!.soloDishes {
+            subtotal += dish.price
+        }
+        
+        subtotalField.text = "\(subtotal)"
+        totalField.text = "\(subtotal)"
         // Do any additional setup after loading the view.
     }
 
