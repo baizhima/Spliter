@@ -15,6 +15,9 @@ class ServerCheckSubtotalViewController: UIViewController {
         self.performSegueWithIdentifier("serverCheckSubtotalToServerTypeShareDishes", sender: self)
     }
     
+    @IBAction func nextPressed(sender: UIBarButtonItem) {
+        self.performSegueWithIdentifier("serverCheckSubtotalToRemoveDishDidNotEat", sender: self)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

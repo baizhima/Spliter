@@ -22,6 +22,15 @@ class TypeOwnDishesViewController: UIViewController, UIScrollViewDelegate, UITex
     
     @IBOutlet weak var dishTable: UITableView!
     
+    
+    @IBAction func backPressed(sender: UIBarButtonItem) {
+        if currUser.isHost {
+            self.performSegueWithIdentifier("typeOwnDishesToServerWait", sender: self)
+        } else {
+            self.performSegueWithIdentifier("typeOwnDishesToClientJoin", sender: self)
+        }
+    }
+    
     @IBAction func nextPressed(sender: UIBarButtonItem) {
         // extend currMeal.soloDishes by dishArr
         currMeal!.soloDishes.appendContentsOf(soloDishArr)

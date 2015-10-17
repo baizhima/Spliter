@@ -317,7 +317,11 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <items>
                                     <navigationItem title="Your own dishes!" id="aFI-Kc-ugD">
-                                        <barButtonItem key="leftBarButtonItem" title="back" id="wqX-1T-jUi"/>
+                                        <barButtonItem key="leftBarButtonItem" title="back" id="wqX-1T-jUi">
+                                            <connections>
+                                                <action selector="backPressed:" destination="a63-N9-D1F" id="PDD-7d-ZtH"/>
+                                            </connections>
+                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="next" id="ILv-GO-OGc">
                                             <connections>
                                                 <action selector="nextPressed:" destination="a63-N9-D1F" id="DBl-Bi-Nee"/>
@@ -747,8 +751,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AJr-dr-IXY">
+                            <navigationBar contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AJr-dr-IXY">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="jd0-rw-eSA"/>
+                                </constraints>
                                 <items>
                                     <navigationItem id="Ebe-bW-kMI">
                                         <barButtonItem key="leftBarButtonItem" title="back" id="UCL-I2-jvy">
@@ -756,16 +763,45 @@
                                                 <action selector="backPressed:" destination="VlJ-1k-BW6" id="i8v-tP-MCK"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="next" id="nj8-Ec-7bd"/>
+                                        <barButtonItem key="rightBarButtonItem" title="next" id="nj8-Ec-7bd">
+                                            <connections>
+                                                <action selector="nextPressed:" destination="VlJ-1k-BW6" id="DUt-UX-HGn"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iKM-8I-2UV">
+                                <rect key="frame" x="0.0" y="131" width="375" height="391"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="VlJ-1k-BW6" id="F3I-C5-LDX"/>
+                                    <outlet property="delegate" destination="VlJ-1k-BW6" id="sma-gh-rst"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Subtotal:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J5Y-aO-nns">
+                                <rect key="frame" x="54" y="561" width="95" height="59"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0.00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zlm-z2-eZz">
+                                <rect key="frame" x="164" y="561" width="80" height="59"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="38"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="All Dishes Review" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cbd-xT-rbY">
+                                <rect key="frame" x="115" y="85" width="145" height="28"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="AJr-dr-IXY" firstAttribute="top" secondItem="dLR-zL-Nw5" secondAttribute="bottom" id="HH4-Fs-gBn"/>
-                            <constraint firstAttribute="trailing" secondItem="AJr-dr-IXY" secondAttribute="trailing" id="SRo-ot-qa5"/>
-                            <constraint firstItem="AJr-dr-IXY" firstAttribute="leading" secondItem="7D4-Cn-9X4" secondAttribute="leading" id="e2u-re-aci"/>
+                            <constraint firstItem="AJr-dr-IXY" firstAttribute="leading" secondItem="7D4-Cn-9X4" secondAttribute="leadingMargin" constant="-20" id="NDx-t4-cqa"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="AJr-dr-IXY" secondAttribute="trailing" constant="-20" id="TuF-Yf-Yez"/>
+                            <constraint firstItem="AJr-dr-IXY" firstAttribute="top" secondItem="dLR-zL-Nw5" secondAttribute="bottom" id="ifL-5L-qZi"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -780,12 +816,12 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="p4C-2T-D0T"/>
-        <segue reference="ghu-bt-NMB"/>
-        <segue reference="96H-5m-BCx"/>
-        <segue reference="Dn7-Wl-YMU"/>
+        <segue reference="4KL-G5-uf4"/>
+        <segue reference="KKg-IW-lmu"/>
+        <segue reference="S8D-pB-Lra"/>
         <segue reference="vOd-pg-Kca"/>
         <segue reference="dGz-N1-fph"/>
+        <segue reference="7dO-xX-yeP"/>
         <segue reference="bwC-y0-ghp"/>
     </inferredMetricsTieBreakers>
 </document>

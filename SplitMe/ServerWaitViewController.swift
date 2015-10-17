@@ -59,6 +59,9 @@ class ServerWaitViewController: UIViewController, UINavigationControllerDelegate
         
         currMeal = Meal(splitCode: splitCode, master: currUser)
         joinedFriendsField.text = String(currMeal!.users.count)
+        if currMeal!.receiptImage != nil{
+            imageView.image = currMeal!.receiptImage
+        }
         
         
     }
