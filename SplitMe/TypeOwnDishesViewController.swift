@@ -24,7 +24,7 @@ class TypeOwnDishesViewController: UIViewController, UIScrollViewDelegate, UITex
     
     
     @IBAction func backPressed(sender: UIBarButtonItem) {
-        if currUser.isHost {
+        if User.currentUser!.isHost {
             self.performSegueWithIdentifier("typeOwnDishesToServerWait", sender: self)
         } else {
             self.performSegueWithIdentifier("typeOwnDishesToClientJoin", sender: self)
@@ -34,7 +34,8 @@ class TypeOwnDishesViewController: UIViewController, UIScrollViewDelegate, UITex
     @IBAction func nextPressed(sender: UIBarButtonItem) {
         // extend currMeal.soloDishes by dishArr
         currMeal!.soloDishes.appendContentsOf(soloDishArr)
-        if currUser.isHost {
+        
+        if User.currentUser!.isHost {
             self.performSegueWithIdentifier("typeOwnDishesToServerTypeShareDishes", sender: self)
         } else {
             self.performSegueWithIdentifier("typeOwnDishesToClientWatchAllDishes", sender: self)
@@ -43,7 +44,8 @@ class TypeOwnDishesViewController: UIViewController, UIScrollViewDelegate, UITex
     
     @IBAction func addPressed(sender: UIButton) {
         if dishField!.text != "" && priceField!.text != "" {
-            let currDish = Dish(name: dishField.text!, price: Double(priceField.text!)!, user: currUser)
+            // TODO:
+            let currDish = Dish(name: dishField.text!, price: Double(priceField.text!)!, isShared: false, ownBy: User.currentUser!)
             soloDishArr.append(currDish)
             dishField.text = ""
             priceField.text = ""
@@ -54,7 +56,9 @@ class TypeOwnDishesViewController: UIViewController, UIScrollViewDelegate, UITex
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        imageView.image = currMeal?.receiptImage
+        // TODO:
+        imageView.image = nil
+        //imageView.image = currMeal?.receiptImage
         self.scrollView.minimumZoomScale = 1.5
         self.scrollView.maximumZoomScale = 3.0
         // Do any additional setup after loading the view.

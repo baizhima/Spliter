@@ -9,18 +9,49 @@
 import UIKit
 import Parse
 
-
 class ClientJoinViewController: UIViewController {
 
     
     @IBOutlet weak var inputCodeField: UITextField!
-    
     @IBOutlet weak var connectInfo: UILabel!
     
     @IBAction func backPressed(sender: UIBarButtonItem) {
         self.performSegueWithIdentifier("clientJoinToHome", sender: self)
     }
     
+    // return true if successfully joint the dinner session
+    func joinMeal(slave: User, code: String) -> Bool{
+        print("join dinner session not implemented")
+        
+        let query = PFQuery(className: Meal.parseClassName())
+        query.whereKey("code", equalTo: code)
+        query.findObjectsInBackgroundWithBlock {
+            (objects, error ) -> Void in
+            if error == nil{
+                if let meal = objects?.first as? Meal{
+                   
+                    Meal.currentMeal = meal
+                   
+                    meal.addObject(slave, forKey: "users")
+                    //meal.users.append(slave)
+                    meal.saveInBackgroundWithBlock({
+                        (success, error ) -> Void in
+                        if(success){
+                            print("joint the group successfully!")
+                            self.connectInfo.text = "joint the group successfully!"
+                            
+                            print(meal)
+                        }
+                    })
+                }else{
+                    print("the result object is not meal \(objects)")
+                }
+            }else{
+                print("query meal error: \(error)")
+            }
+        }
+        return false;
+    }
     
     @IBAction func confirmPressed(sender: UIButton) {
         let code = Int(inputCodeField!.text!)!
@@ -29,58 +60,54 @@ class ClientJoinViewController: UIViewController {
             connectInfo.hidden = false
             return
         }
+        
         connectInfo.text = "Connecting \(code)..."
         connectInfo.hidden = false
         // connecting
         
-        let query = PFQuery(className:"Meal")
-        query.whereKey("splitCode", equalTo: code)
-        do {
-            let mealArray = try query.findObjects()
-            if mealArray.count > 0 {
-                mealId = mealArray[0].objectId!
-                connectInfo.text = "Join successfully"
-                print(mealId)
-                
-                
-            } else {
-                connectInfo.text = "Invalid splitCode"
-                
-                return
-            }
-        } catch _ {
-            
-        }
-        let query2 = PFQuery(className:"Meal")
-        query2.getObjectInBackgroundWithId(mealId) {
-            (meal: PFObject?, error: NSError?) -> Void in
-            if error != nil {
-                print(error)
-            } else if let meal = meal {
-                meal.addUniqueObject(userId, forKey:"users")
-                meal.saveInBackground()
-            }
-        }
-        
-        
-        
-        
+        joinMeal(User.currentUser!, code: String(code))
+//        
+//        let query = Meal.query()
+//
+//        let query = PFQuery(className:"Meal")
+//        query.whereKey("splitCode", equalTo: code)
+//        do {
+//            let mealArray = try query.findObjects()
+//            if mealArray.count > 0 {
+//                mealId = mealArray[0].objectId!
+//                connectInfo.text = "Join successfully"
+//                print(mealId)
+//                
+//                
+//            } else {
+//                connectInfo.text = "Invalid splitCode"
+//                
+//                return
+//            }
+//        } catch _ {
+//            
+//        }
+//        let query2 = PFQuery(className:"Meal")
+//        query2.getObjectInBackgroundWithId(mealId) {
+//            (meal: PFObject?, error: NSError?) -> Void in
+//            if error != nil {
+//                print(error)
+//            } else if let meal = meal {
+//                meal.addUniqueObject(userId, forKey:"users")
+//                meal.saveInBackground()
+//            }
+//        }
     }
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         connectInfo.hidden = true
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-
     /*
     // MARK: - Navigation
 

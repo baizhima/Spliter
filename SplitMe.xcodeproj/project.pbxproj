@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		147B73D41BDB22970060B1E0 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 147B73D31BDB22970060B1E0 /* Bolts.framework */; settings = {ASSET_TAGS = (); }; };
-		147B73D61BDB22A60060B1E0 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 147B73D51BDB22A60060B1E0 /* Parse.framework */; settings = {ASSET_TAGS = (); }; };
+		147B73DF1BDB243D0060B1E0 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147B73DD1BDB243D0060B1E0 /* Meal.swift */; settings = {ASSET_TAGS = (); }; };
+		147B73E01BDB243D0060B1E0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147B73DE1BDB243D0060B1E0 /* User.swift */; settings = {ASSET_TAGS = (); }; };
+		147B73E21BDB24450060B1E0 /* Dish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147B73E11BDB24450060B1E0 /* Dish.swift */; settings = {ASSET_TAGS = (); }; };
+		147B73E51BDB285E0060B1E0 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 147B73E31BDB285E0060B1E0 /* Bolts.framework */; settings = {ASSET_TAGS = (); }; };
+		147B73E61BDB285E0060B1E0 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 147B73E41BDB285E0060B1E0 /* Parse.framework */; settings = {ASSET_TAGS = (); }; };
 		EC62E8F51BD0758E003718C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC62E8F41BD0758E003718C2 /* AppDelegate.swift */; };
 		EC62E8FA1BD0758E003718C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC62E8F81BD0758E003718C2 /* Main.storyboard */; };
 		EC62E8FC1BD0758E003718C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC62E8FB1BD0758E003718C2 /* Assets.xcassets */; };
@@ -35,8 +38,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		147B73D31BDB22970060B1E0 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		147B73D51BDB22A60060B1E0 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		147B73DD1BDB243D0060B1E0 /* Meal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
+		147B73DE1BDB243D0060B1E0 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		147B73E11BDB24450060B1E0 /* Dish.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dish.swift; sourceTree = "<group>"; };
+		147B73E31BDB285E0060B1E0 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		147B73E41BDB285E0060B1E0 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		EC62E8F11BD0758E003718C2 /* SplitMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SplitMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC62E8F41BD0758E003718C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EC62E8F91BD0758E003718C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -77,9 +83,9 @@
 				ECAC02361BDAF3D80015EF50 /* QuartzCore.framework in Frameworks */,
 				ECAC02341BDAF3D10015EF50 /* CoreLocation.framework in Frameworks */,
 				ECAC02321BDAF3CA0015EF50 /* CoreGraphics.framework in Frameworks */,
-				147B73D41BDB22970060B1E0 /* Bolts.framework in Frameworks */,
+				147B73E51BDB285E0060B1E0 /* Bolts.framework in Frameworks */,
 				ECAC02301BDAF3C40015EF50 /* CFNetwork.framework in Frameworks */,
-				147B73D61BDB22A60060B1E0 /* Parse.framework in Frameworks */,
+				147B73E61BDB285E0060B1E0 /* Parse.framework in Frameworks */,
 				ECAC022E1BDAF3BD0015EF50 /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -107,6 +113,9 @@
 		EC62E8F31BD0758E003718C2 /* SplitMe */ = {
 			isa = PBXGroup;
 			children = (
+				147B73E11BDB24450060B1E0 /* Dish.swift */,
+				147B73DD1BDB243D0060B1E0 /* Meal.swift */,
+				147B73DE1BDB243D0060B1E0 /* User.swift */,
 				EC62E8F41BD0758E003718C2 /* AppDelegate.swift */,
 				EC62E8F81BD0758E003718C2 /* Main.storyboard */,
 				EC62E9061BD075BD003718C2 /* HomeViewController.swift */,
@@ -128,8 +137,8 @@
 		ECAC02411BDAF43B0015EF50 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				147B73D51BDB22A60060B1E0 /* Parse.framework */,
-				147B73D31BDB22970060B1E0 /* Bolts.framework */,
+				147B73E31BDB285E0060B1E0 /* Bolts.framework */,
+				147B73E41BDB285E0060B1E0 /* Parse.framework */,
 				ECAC023F1BDAF3FE0015EF50 /* libsqlite3.tbd */,
 				ECAC023D1BDAF3F50015EF50 /* libz.tbd */,
 				ECAC023B1BDAF3ED0015EF50 /* SystemConfiguration.framework */,
@@ -175,7 +184,7 @@
 				TargetAttributes = {
 					EC62E8F01BD0758E003718C2 = {
 						CreatedOnToolsVersion = 7.0.1;
-						DevelopmentTeam = 646W9GX953;
+						DevelopmentTeam = NETDM9649U;
 					};
 				};
 			};
@@ -219,11 +228,14 @@
 				EC62E9111BD184F4003718C2 /* ClientWatchAllDishesViewController.swift in Sources */,
 				EC62E9091BD0779A003718C2 /* ServerWaitViewController.swift in Sources */,
 				EC62E9151BD187D9003718C2 /* RemoveDishesDidNotEatViewController.swift in Sources */,
+				147B73DF1BDB243D0060B1E0 /* Meal.swift in Sources */,
 				EC62E8F51BD0758E003718C2 /* AppDelegate.swift in Sources */,
 				EC62E9131BD186A7003718C2 /* ServerCheckSubtotalViewController.swift in Sources */,
 				EC62E9071BD075BD003718C2 /* HomeViewController.swift in Sources */,
+				147B73E01BDB243D0060B1E0 /* User.swift in Sources */,
 				EC62E9171BD188B0003718C2 /* ServerConfirmTotalViewController.swift in Sources */,
 				EC62E90B1BD077B1003718C2 /* ClientJoinViewController.swift in Sources */,
+				147B73E21BDB24450060B1E0 /* Dish.swift in Sources */,
 				EC62E90F1BD095F3003718C2 /* ServerTypeShareDishesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -337,6 +349,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -344,8 +358,9 @@
 				);
 				INFOPLIST_FILE = SplitMe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.SplitMe;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SplitMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -353,6 +368,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -360,8 +377,9 @@
 				);
 				INFOPLIST_FILE = SplitMe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.SplitMe;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SplitMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

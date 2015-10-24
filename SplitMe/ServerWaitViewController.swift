@@ -7,15 +7,11 @@
 //
 
 import UIKit
-
 import Parse
-
-
 
 class ServerWaitViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
-    
-    let splitCode = Int(arc4random_uniform(9000)) + 1000
+    //let splitCode = Int(arc4random_uniform(9000)) + 1000
     
     @IBOutlet weak var joinedFriendsField: UILabel!
     @IBOutlet weak var uploadImageButton: UIButton!
@@ -26,10 +22,12 @@ class ServerWaitViewController: UIViewController, UINavigationControllerDelegate
     
     @IBAction func nextPressed(sender: UIBarButtonItem) {
         // some condition: more than 1 friend, image uploaded ...
-        if currMeal != nil {
-            if currMeal!.receiptImage != nil {
+        if let meal: Meal =  Meal.currentMeal {
+            if meal.image != nil {
                 self.performSegueWithIdentifier("serverWaitToTypeOwnDishes", sender: self)
             }
+        }else{
+            print("error: current meal is nil")
         }
         
     }
@@ -52,35 +50,36 @@ class ServerWaitViewController: UIViewController, UINavigationControllerDelegate
         self.presentViewController(imageFromSource, animated: true, completion: nil)
     }
 
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        splitCodeField.text = String(splitCode)
-
+        
+        if let meal = Meal.currentMeal{
+            splitCodeField.text = meal.code
+        }else{
+            print("current meal is nil")
+        }
     }
     
     override func viewDidAppear(animated: Bool) {
-        if mealId.characters.count == 0 {
-            let meal = PFObject(className: "Meal")
-            print("userId = \(userId)")
-            meal["masterId"] = userId
-            meal["splitCode"] = splitCode
-            meal["state"] = 0
-            meal["users"] = [String]()
-            meal["soloDishes"] = [String]()
-            meal["sharedDishes"] = [String]()
-            meal["tax"] = 0
-            meal["tips"] = 0
-            meal.saveInBackgroundWithBlock { (succeed:Bool, error:NSError?) -> Void in
-                if succeed {
-                    mealId = meal.objectId!
-                } else {
-                    print(error)
-                }
-            }
-        }
-        
+//        if mealId.characters.count == 0 {
+//            let meal = PFObject(className: "Meal")
+//            print("userId = \(userId)")
+//            meal["masterId"] = userId
+//            meal["splitCode"] = splitCode
+//            meal["state"] = 0
+//            meal["users"] = [String]()
+//            meal["soloDishes"] = [String]()
+//            meal["sharedDishes"] = [String]()
+//            meal["tax"] = 0
+//            meal["tips"] = 0
+//            meal.saveInBackgroundWithBlock { (succeed:Bool, error:NSError?) -> Void in
+//                if succeed {
+//                    mealId = meal.objectId!
+//                } else {
+//                    print(error)
+//                }
+//            }
+//        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -90,23 +89,44 @@ class ServerWaitViewController: UIViewController, UINavigationControllerDelegate
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
       
-            let receiptImage = info[UIImagePickerControllerOriginalImage] as? UIImage
-            imageView.image = receiptImage
-            self.dismissViewControllerAnimated(true, completion: {})
-            uploadImageButton.titleLabel!.text = "Retake the photo?"
-        
-        let query = PFQuery(className:"Meal")
-        query.getObjectInBackgroundWithId(mealId) {
-            (meal: PFObject?, error: NSError?) -> Void in
-            if error != nil {
-                print(error)
-            } else if let meal = meal{
-                let imageData = UIImagePNGRepresentation(receiptImage!)
-                let imageFile = PFFile(name:"image.png", data:imageData!)
-                meal["receiptImage"] = imageFile
-                meal.saveInBackground()
-            }
+        let receiptImage = info[UIImagePickerControllerOriginalImage] as? UIImage
+        imageView.image = receiptImage
+        self.dismissViewControllerAnimated(true, completion: {})
+        uploadImageButton.titleLabel!.text = "Retake the photo?"
+  
+        if let meal: Meal = Meal.currentMeal{
+            
+            let imageData = UIImagePNGRepresentation(receiptImage!)
+            let imageFile = PFFile(name:"image.png", data:imageData!)
+            
+            imageFile!.saveInBackgroundWithBlock({
+                (ok, error ) -> Void in
+                if( error != nil){
+                    print("Can't save image \(error)")
+                }else{
+                    meal.image = imageFile?.url
+                    meal.saveInBackgroundWithBlock({
+                        (ok, error) -> Void in
+                        if(!ok){
+                            print("error when saving meal: \(error)")
+                        }
+                    })
+                }
+            })
         }
+        
+//        let query = PFQuery(className:"Meal")
+//        query.getObjectInBackgroundWithId(mealId) {
+//            (meal: PFObject?, error: NSError?) -> Void in
+//            if error != nil {
+//                print(error)
+//            } else if let meal = meal{
+//                let imageData = UIImagePNGRepresentation(receiptImage!)
+//                let imageFile = PFFile(name:"image.png", data:imageData!)
+//                meal["receiptImage"] = imageFile
+//                meal.saveInBackground()
+//            }
+//        }
     }
     
     

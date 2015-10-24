@@ -36,7 +36,8 @@ class ServerTypeShareDishesViewController: UIViewController, UIScrollViewDelegat
     
     @IBAction func addPressed(sender: UIButton) {
         if dishField!.text != "" && priceField!.text != "" {
-            let currDish = Dish(name: dishField.text!, price: Double(priceField.text!)!, user: currUser)
+            let currDish = Dish(name: dishField.text!, price: Double(priceField.text!)!, isShared: false, ownBy: User.currentUser!)
+            
             sharedDishArr.append(currDish)
             print("shareDishArr count = \(sharedDishArr.count)")
             dishField.text = ""
@@ -48,7 +49,8 @@ class ServerTypeShareDishesViewController: UIViewController, UIScrollViewDelegat
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        imageView.image = currMeal?.receiptImage
+        // XXX: TODO: set to image
+        imageView.image = nil // currMeal?.receiptImage
         self.scrollView.minimumZoomScale = 1.5
         self.scrollView.maximumZoomScale = 3.0
         // Do any additional setup after loading the view.
