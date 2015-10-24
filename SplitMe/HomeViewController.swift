@@ -79,7 +79,6 @@ class HomeViewController: UIViewController {
 
     let user = PFObject(className: "User")
     
-    
     @IBOutlet weak var nameField: UITextField!
     @IBAction func createPressed(sender: UIButton) {
         if !nameField!.text!.isEmpty {

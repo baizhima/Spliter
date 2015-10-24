@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		147B73D41BDB22970060B1E0 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 147B73D31BDB22970060B1E0 /* Bolts.framework */; settings = {ASSET_TAGS = (); }; };
+		147B73D61BDB22A60060B1E0 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 147B73D51BDB22A60060B1E0 /* Parse.framework */; settings = {ASSET_TAGS = (); }; };
 		EC62E8F51BD0758E003718C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC62E8F41BD0758E003718C2 /* AppDelegate.swift */; };
 		EC62E8FA1BD0758E003718C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC62E8F81BD0758E003718C2 /* Main.storyboard */; };
 		EC62E8FC1BD0758E003718C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC62E8FB1BD0758E003718C2 /* Assets.xcassets */; };
@@ -20,8 +22,6 @@
 		EC62E9131BD186A7003718C2 /* ServerCheckSubtotalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC62E9121BD186A7003718C2 /* ServerCheckSubtotalViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		EC62E9151BD187D9003718C2 /* RemoveDishesDidNotEatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC62E9141BD187D9003718C2 /* RemoveDishesDidNotEatViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		EC62E9171BD188B0003718C2 /* ServerConfirmTotalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC62E9161BD188B0003718C2 /* ServerConfirmTotalViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		ECAC022B1BDAF3AF0015EF50 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECAC02291BDAF3AF0015EF50 /* Bolts.framework */; settings = {ASSET_TAGS = (); }; };
-		ECAC022C1BDAF3AF0015EF50 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECAC022A1BDAF3AF0015EF50 /* Parse.framework */; settings = {ASSET_TAGS = (); }; };
 		ECAC022E1BDAF3BD0015EF50 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECAC022D1BDAF3BD0015EF50 /* AudioToolbox.framework */; };
 		ECAC02301BDAF3C40015EF50 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECAC022F1BDAF3C40015EF50 /* CFNetwork.framework */; };
 		ECAC02321BDAF3CA0015EF50 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECAC02311BDAF3CA0015EF50 /* CoreGraphics.framework */; };
@@ -35,6 +35,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		147B73D31BDB22970060B1E0 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		147B73D51BDB22A60060B1E0 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		EC62E8F11BD0758E003718C2 /* SplitMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SplitMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC62E8F41BD0758E003718C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EC62E8F91BD0758E003718C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -50,8 +52,6 @@
 		EC62E9121BD186A7003718C2 /* ServerCheckSubtotalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerCheckSubtotalViewController.swift; sourceTree = "<group>"; };
 		EC62E9141BD187D9003718C2 /* RemoveDishesDidNotEatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoveDishesDidNotEatViewController.swift; sourceTree = "<group>"; };
 		EC62E9161BD188B0003718C2 /* ServerConfirmTotalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerConfirmTotalViewController.swift; sourceTree = "<group>"; };
-		ECAC02291BDAF3AF0015EF50 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Frameworks/Bolts.framework; sourceTree = "<group>"; };
-		ECAC022A1BDAF3AF0015EF50 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = Frameworks/Parse.framework; sourceTree = "<group>"; };
 		ECAC022D1BDAF3BD0015EF50 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		ECAC022F1BDAF3C40015EF50 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		ECAC02311BDAF3CA0015EF50 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -77,10 +77,10 @@
 				ECAC02361BDAF3D80015EF50 /* QuartzCore.framework in Frameworks */,
 				ECAC02341BDAF3D10015EF50 /* CoreLocation.framework in Frameworks */,
 				ECAC02321BDAF3CA0015EF50 /* CoreGraphics.framework in Frameworks */,
+				147B73D41BDB22970060B1E0 /* Bolts.framework in Frameworks */,
 				ECAC02301BDAF3C40015EF50 /* CFNetwork.framework in Frameworks */,
+				147B73D61BDB22A60060B1E0 /* Parse.framework in Frameworks */,
 				ECAC022E1BDAF3BD0015EF50 /* AudioToolbox.framework in Frameworks */,
-				ECAC022C1BDAF3AF0015EF50 /* Parse.framework in Frameworks */,
-				ECAC022B1BDAF3AF0015EF50 /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,6 +128,8 @@
 		ECAC02411BDAF43B0015EF50 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				147B73D51BDB22A60060B1E0 /* Parse.framework */,
+				147B73D31BDB22970060B1E0 /* Bolts.framework */,
 				ECAC023F1BDAF3FE0015EF50 /* libsqlite3.tbd */,
 				ECAC023D1BDAF3F50015EF50 /* libz.tbd */,
 				ECAC023B1BDAF3ED0015EF50 /* SystemConfiguration.framework */,
@@ -138,8 +140,6 @@
 				ECAC02311BDAF3CA0015EF50 /* CoreGraphics.framework */,
 				ECAC022F1BDAF3C40015EF50 /* CFNetwork.framework */,
 				ECAC022D1BDAF3BD0015EF50 /* AudioToolbox.framework */,
-				ECAC02291BDAF3AF0015EF50 /* Bolts.framework */,
-				ECAC022A1BDAF3AF0015EF50 /* Parse.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
