@@ -7,13 +7,11 @@
 //
 
 import UIKit
-
+import Parse
 
 struct Meal {
     //let id: UInt32
     let splitCode: Int
-    //let createDate: UInt64?
-    //let completeDate: UInt64?
     var receiptImage: UIImage?
     let tax: Double
     let tips: Double
@@ -74,30 +72,48 @@ struct Dish {
 var currUser = User()
 var currMeal: Meal?
 
+var userId: String = ""
+var mealId: String = ""
+
 class HomeViewController: UIViewController {
 
+    let user = PFObject(className: "User")
     
     
     @IBOutlet weak var nameField: UITextField!
     @IBAction func createPressed(sender: UIButton) {
         if !nameField!.text!.isEmpty {
-            currUser.userName = nameField!.text!
-            currUser.isHost = true
+            user["name"] = nameField!.text!
+            user.saveInBackgroundWithBlock { (succeed:Bool, error:NSError?) -> Void in
+                if succeed {
+                    userId = self.user.objectId!
+                    print("[Home]userID = \(userId)")
+                } else {
+                    print("create user failed")
+                }
+            }
             self.performSegueWithIdentifier("homeToServerWait", sender: self)
         }
     }
     
     @IBAction func joinPressed(sender: UIButton) {
         if !nameField!.text!.isEmpty {
-            currUser.userName = nameField!.text!
+            user["name"] = nameField!.text!
+            user.saveInBackgroundWithBlock { (succeed:Bool, error:NSError?) -> Void in
+                if succeed {
+                    userId = self.user.objectId!
+                    print("[Home]userID = \(userId)")
+                } else {
+                    print("create user failed")
+                }
+            }
             self.performSegueWithIdentifier("homeToClientJoin", sender: self)
         }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        if currUser.userName.characters.count > 0 {
-            nameField.text = currUser.userName
-        }
+        
+
         
         // Do any additional setup after loading the view.
     }

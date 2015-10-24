@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 
 class ClientJoinViewController: UIViewController {
@@ -32,7 +33,38 @@ class ClientJoinViewController: UIViewController {
         connectInfo.hidden = false
         // connecting
         
-        currMeal = Meal(splitCode: code, master: currUser)  // TODO master should be the server client
+        let query = PFQuery(className:"Meal")
+        query.whereKey("splitCode", equalTo: code)
+        do {
+            let mealArray = try query.findObjects()
+            if mealArray.count > 0 {
+                mealId = mealArray[0].objectId!
+                connectInfo.text = "Join successfully"
+                print(mealId)
+                
+                
+            } else {
+                connectInfo.text = "Invalid splitCode"
+                
+                return
+            }
+        } catch _ {
+            
+        }
+        let query2 = PFQuery(className:"Meal")
+        query2.getObjectInBackgroundWithId(mealId) {
+            (meal: PFObject?, error: NSError?) -> Void in
+            if error != nil {
+                print(error)
+            } else if let meal = meal {
+                meal.addUniqueObject(userId, forKey:"users")
+                meal.saveInBackground()
+            }
+        }
+        
+        
+        
+        
     }
     
     

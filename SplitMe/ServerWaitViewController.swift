@@ -8,12 +8,14 @@
 
 import UIKit
 
-
+import Parse
 
 
 
 class ServerWaitViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
+    
+    let splitCode = Int(arc4random_uniform(9000)) + 1000
     
     @IBOutlet weak var joinedFriendsField: UILabel!
     @IBOutlet weak var uploadImageButton: UIButton!
@@ -54,15 +56,30 @@ class ServerWaitViewController: UIViewController, UINavigationControllerDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let splitCode = Int(arc4random_uniform(9000)) + 1000
         splitCodeField.text = String(splitCode)
-        
-        currMeal = Meal(splitCode: splitCode, master: currUser)
-        joinedFriendsField.text = String(currMeal!.users.count)
-        if currMeal!.receiptImage != nil{
-            imageView.image = currMeal!.receiptImage
+
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        if mealId.characters.count == 0 {
+            let meal = PFObject(className: "Meal")
+            print("userId = \(userId)")
+            meal["masterId"] = userId
+            meal["splitCode"] = splitCode
+            meal["state"] = 0
+            meal["users"] = [String]()
+            meal["soloDishes"] = [String]()
+            meal["sharedDishes"] = [String]()
+            meal["tax"] = 0
+            meal["tips"] = 0
+            meal.saveInBackgroundWithBlock { (succeed:Bool, error:NSError?) -> Void in
+                if succeed {
+                    mealId = meal.objectId!
+                } else {
+                    print(error)
+                }
+            }
         }
-        
         
     }
 
@@ -78,7 +95,18 @@ class ServerWaitViewController: UIViewController, UINavigationControllerDelegate
             self.dismissViewControllerAnimated(true, completion: {})
             uploadImageButton.titleLabel!.text = "Retake the photo?"
         
-            currMeal?.receiptImage = receiptImage
+        let query = PFQuery(className:"Meal")
+        query.getObjectInBackgroundWithId(mealId) {
+            (meal: PFObject?, error: NSError?) -> Void in
+            if error != nil {
+                print(error)
+            } else if let meal = meal{
+                let imageData = UIImagePNGRepresentation(receiptImage!)
+                let imageFile = PFFile(name:"image.png", data:imageData!)
+                meal["receiptImage"] = imageFile
+                meal.saveInBackground()
+            }
+        }
     }
     
     

@@ -20,6 +20,18 @@
 		EC62E9131BD186A7003718C2 /* ServerCheckSubtotalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC62E9121BD186A7003718C2 /* ServerCheckSubtotalViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		EC62E9151BD187D9003718C2 /* RemoveDishesDidNotEatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC62E9141BD187D9003718C2 /* RemoveDishesDidNotEatViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		EC62E9171BD188B0003718C2 /* ServerConfirmTotalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC62E9161BD188B0003718C2 /* ServerConfirmTotalViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		ECAC022B1BDAF3AF0015EF50 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECAC02291BDAF3AF0015EF50 /* Bolts.framework */; settings = {ASSET_TAGS = (); }; };
+		ECAC022C1BDAF3AF0015EF50 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECAC022A1BDAF3AF0015EF50 /* Parse.framework */; settings = {ASSET_TAGS = (); }; };
+		ECAC022E1BDAF3BD0015EF50 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECAC022D1BDAF3BD0015EF50 /* AudioToolbox.framework */; };
+		ECAC02301BDAF3C40015EF50 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECAC022F1BDAF3C40015EF50 /* CFNetwork.framework */; };
+		ECAC02321BDAF3CA0015EF50 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECAC02311BDAF3CA0015EF50 /* CoreGraphics.framework */; };
+		ECAC02341BDAF3D10015EF50 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECAC02331BDAF3D10015EF50 /* CoreLocation.framework */; };
+		ECAC02361BDAF3D80015EF50 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECAC02351BDAF3D80015EF50 /* QuartzCore.framework */; };
+		ECAC02381BDAF3DD0015EF50 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECAC02371BDAF3DD0015EF50 /* Security.framework */; };
+		ECAC023A1BDAF3E30015EF50 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECAC02391BDAF3E30015EF50 /* StoreKit.framework */; };
+		ECAC023C1BDAF3ED0015EF50 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECAC023B1BDAF3ED0015EF50 /* SystemConfiguration.framework */; };
+		ECAC023E1BDAF3F50015EF50 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = ECAC023D1BDAF3F50015EF50 /* libz.tbd */; };
+		ECAC02401BDAF3FE0015EF50 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = ECAC023F1BDAF3FE0015EF50 /* libsqlite3.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +50,18 @@
 		EC62E9121BD186A7003718C2 /* ServerCheckSubtotalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerCheckSubtotalViewController.swift; sourceTree = "<group>"; };
 		EC62E9141BD187D9003718C2 /* RemoveDishesDidNotEatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoveDishesDidNotEatViewController.swift; sourceTree = "<group>"; };
 		EC62E9161BD188B0003718C2 /* ServerConfirmTotalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerConfirmTotalViewController.swift; sourceTree = "<group>"; };
+		ECAC02291BDAF3AF0015EF50 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Frameworks/Bolts.framework; sourceTree = "<group>"; };
+		ECAC022A1BDAF3AF0015EF50 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = Frameworks/Parse.framework; sourceTree = "<group>"; };
+		ECAC022D1BDAF3BD0015EF50 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		ECAC022F1BDAF3C40015EF50 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		ECAC02311BDAF3CA0015EF50 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		ECAC02331BDAF3D10015EF50 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		ECAC02351BDAF3D80015EF50 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		ECAC02371BDAF3DD0015EF50 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		ECAC02391BDAF3E30015EF50 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		ECAC023B1BDAF3ED0015EF50 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		ECAC023D1BDAF3F50015EF50 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		ECAC023F1BDAF3FE0015EF50 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +69,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECAC02401BDAF3FE0015EF50 /* libsqlite3.tbd in Frameworks */,
+				ECAC023E1BDAF3F50015EF50 /* libz.tbd in Frameworks */,
+				ECAC023C1BDAF3ED0015EF50 /* SystemConfiguration.framework in Frameworks */,
+				ECAC023A1BDAF3E30015EF50 /* StoreKit.framework in Frameworks */,
+				ECAC02381BDAF3DD0015EF50 /* Security.framework in Frameworks */,
+				ECAC02361BDAF3D80015EF50 /* QuartzCore.framework in Frameworks */,
+				ECAC02341BDAF3D10015EF50 /* CoreLocation.framework in Frameworks */,
+				ECAC02321BDAF3CA0015EF50 /* CoreGraphics.framework in Frameworks */,
+				ECAC02301BDAF3C40015EF50 /* CFNetwork.framework in Frameworks */,
+				ECAC022E1BDAF3BD0015EF50 /* AudioToolbox.framework in Frameworks */,
+				ECAC022C1BDAF3AF0015EF50 /* Parse.framework in Frameworks */,
+				ECAC022B1BDAF3AF0015EF50 /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,6 +90,7 @@
 		EC62E8E81BD0758E003718C2 = {
 			isa = PBXGroup;
 			children = (
+				ECAC02411BDAF43B0015EF50 /* Frameworks */,
 				EC62E8F31BD0758E003718C2 /* SplitMe */,
 				EC62E8F21BD0758E003718C2 /* Products */,
 			);
@@ -86,6 +123,25 @@
 				EC62E9001BD0758E003718C2 /* Info.plist */,
 			);
 			path = SplitMe;
+			sourceTree = "<group>";
+		};
+		ECAC02411BDAF43B0015EF50 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ECAC023F1BDAF3FE0015EF50 /* libsqlite3.tbd */,
+				ECAC023D1BDAF3F50015EF50 /* libz.tbd */,
+				ECAC023B1BDAF3ED0015EF50 /* SystemConfiguration.framework */,
+				ECAC02391BDAF3E30015EF50 /* StoreKit.framework */,
+				ECAC02371BDAF3DD0015EF50 /* Security.framework */,
+				ECAC02351BDAF3D80015EF50 /* QuartzCore.framework */,
+				ECAC02331BDAF3D10015EF50 /* CoreLocation.framework */,
+				ECAC02311BDAF3CA0015EF50 /* CoreGraphics.framework */,
+				ECAC022F1BDAF3C40015EF50 /* CFNetwork.framework */,
+				ECAC022D1BDAF3BD0015EF50 /* AudioToolbox.framework */,
+				ECAC02291BDAF3AF0015EF50 /* Bolts.framework */,
+				ECAC022A1BDAF3AF0015EF50 /* Parse.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,6 +337,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = SplitMe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.SplitMe;
@@ -292,6 +353,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = SplitMe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.SplitMe;
