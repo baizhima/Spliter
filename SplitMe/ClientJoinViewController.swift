@@ -31,14 +31,18 @@ class ClientJoinViewController: UIViewController {
                 if let meal = objects?.first as? Meal{
                    
                     Meal.currentMeal = meal
+                    
+                    if meal.state >= Meal.AllUserJoined{
+                        self.connectInfo.text = "group closed, sorry"
+                        return
+                    }
                    
-                    meal.addObject(slave, forKey: "users")
-                    //meal.users.append(slave)
+                    meal.users.append(slave)
                     meal.saveInBackgroundWithBlock({
                         (success, error ) -> Void in
                         if(success){
                             print("joint the group successfully!")
-                            self.connectInfo.text = "joint the group successfully!"
+                            self.connectInfo.text = "joined the group successfully!"
                             
                             print(meal)
                         }
@@ -99,9 +103,29 @@ class ClientJoinViewController: UIViewController {
 //        }
     }
     
+    func fetchMeal(){
+        
+        if let meal: Meal = Meal.currentMeal {
+       
+            meal.fetchInBackgroundWithBlock({
+                ( object, error) -> Void in
+                if error != nil{
+                   print(error )
+                }
+                else{
+                    if let meal: Meal = object as? Meal{
+                        
+                        print(meal.users)
+                    }
+                }
+            })
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         connectInfo.hidden = true
+        NSTimer.scheduledTimerWithTimeInterval(2.0, target: self, selector: Selector("fetchMeal"), userInfo: nil, repeats: true)
     }
 
     override func didReceiveMemoryWarning() {

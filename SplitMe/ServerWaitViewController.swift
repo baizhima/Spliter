@@ -23,9 +23,25 @@ class ServerWaitViewController: UIViewController, UINavigationControllerDelegate
     @IBAction func nextPressed(sender: UIBarButtonItem) {
         // some condition: more than 1 friend, image uploaded ...
         if let meal: Meal =  Meal.currentMeal {
-            if meal.image != nil {
-                self.performSegueWithIdentifier("serverWaitToTypeOwnDishes", sender: self)
+            do{
+                try meal.fetch()
             }
+            catch _{
+                
+            }
+            
+            if meal.image == nil {
+                print("error: image empty")
+            }
+            if meal.users.count < 2 {
+                print("less than one friends joined")
+            }
+            
+            meal.state = Meal.AllUserJoined
+            meal.saveInBackground()
+            
+            self.performSegueWithIdentifier("serverWaitToTypeOwnDishes", sender: self)
+            
         }else{
             print("error: current meal is nil")
         }
@@ -49,7 +65,28 @@ class ServerWaitViewController: UIViewController, UINavigationControllerDelegate
         }
         self.presentViewController(imageFromSource, animated: true, completion: nil)
     }
-
+    
+    
+    
+    func fetchMeal(){
+        
+        if let meal: Meal = Meal.currentMeal {
+            
+            meal.fetchInBackgroundWithBlock({
+                ( object, error) -> Void in
+                if error != nil{
+                    print(error )
+                }
+                else{
+                    if let meal: Meal = object as? Meal{
+                        
+                        self.joinedFriendsField.text = String(meal.users.count-1)
+                    }
+                }
+            })
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -58,6 +95,8 @@ class ServerWaitViewController: UIViewController, UINavigationControllerDelegate
         }else{
             print("current meal is nil")
         }
+        
+        NSTimer.scheduledTimerWithTimeInterval(2.0, target: self, selector: Selector("fetchMeal"), userInfo: nil, repeats: true)
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -95,9 +134,11 @@ class ServerWaitViewController: UIViewController, UINavigationControllerDelegate
         uploadImageButton.titleLabel!.text = "Retake the photo?"
   
         if let meal: Meal = Meal.currentMeal{
+           
+            let imageData = UIImageJPEGRepresentation(receiptImage!, 0.1)
+            //let imageData = UIImagePNGRepresentation(receiptImag!,
             
-            let imageData = UIImagePNGRepresentation(receiptImage!)
-            let imageFile = PFFile(name:"image.png", data:imageData!)
+            let imageFile = PFFile(name:"image.jpeg", data:imageData!)
             
             imageFile!.saveInBackgroundWithBlock({
                 (ok, error ) -> Void in
